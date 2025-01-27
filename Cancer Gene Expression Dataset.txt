@@ -1,0 +1,23 @@
+---
+title: "Generating the Synthetic Genetic Dataset"
+author: "Theodosios Papazoglou"
+date: "2025-01-16"
+output: html_document
+---
+
+
+expr <- read.csv("GSE85358.csv")
+expr <- expr[,-1] 
+expr <- data.frame(expr)
+data <- t(expr)
+data <- data.frame(data)
+data <- data[,1:500]
+features_only <- data[,1:500]
+
+set.seed(1924)
+X <- data[, 1:10] 
+X <- as.matrix(X)
+b <- runif(10, min = 0, max = 0.5)  
+e <- rnorm(nrow(X), mean = 0, sd = 0.5)  
+y <- X %*% b + e
+data <- cbind(y,data)
