@@ -1,6 +1,6 @@
 #This is the function to perform CSPCA using Nyström's extension.
 
-def supervised_pca(X, Y, q, p, m, lambda_):
+def cspca_nym(X, Y, q, p, m, lambda_):
     XtY = X.T @ Y
     YtX = Y.T @ X
     XtX = X.T @ X
