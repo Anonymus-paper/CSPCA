@@ -1,6 +1,6 @@
 #The following function performs Covariance Supervised Principal Components Analysis.
 
-def supervised_pca(X, Y, q, lambda_):
+def cspca(X, Y, q, lambda_):
     XtX = X.T @ X
     XtY = X.T @ Y
     YtX = Y.T @ X
